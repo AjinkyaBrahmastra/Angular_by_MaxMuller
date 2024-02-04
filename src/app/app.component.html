@@ -1,2 +1,11 @@
-<app-success-alert></app-success-alert>
-<app-warning-alert></app-warning-alert>
+<span class="p-2 mt-3 ms-5"> Enter User Name: </span>
+<input class="p-2 mt-3 ms-2 text-info" [(ngModel)]="userName" />
+<span class="p-2 mt-3 ms-5 text-success">{{ userName }}</span>
+<br />
+<button
+  class="p-2 mt-3 ms-5 text-danger"
+  (click)="resetUserName()"
+  [disabled]="!userName"
+>
+  Reset
+</button>
