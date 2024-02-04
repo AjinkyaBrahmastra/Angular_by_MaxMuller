@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  userName: string;
+  display: boolean = false;
+  count: number = 1;
+  countLogs: number[] = [];
 
-  public resetUserName() {
-    this.userName = '';
+  public displayDetails() {
+    this.countLogs.push(this.count++);
+    this.display = !this.display;
   }
 }

@@ -1,11 +1,12 @@
-<span class="p-2 mt-3 ms-5"> Enter User Name: </span>
-<input class="p-2 mt-3 ms-2 text-info" [(ngModel)]="userName" />
-<span class="p-2 mt-3 ms-5 text-success">{{ userName }}</span>
-<br />
-<button
-  class="p-2 mt-3 ms-5 text-danger"
-  (click)="resetUserName()"
-  [disabled]="!userName"
+<button class="p-1" (click)="displayDetails()">Display Details</button>
+<span *ngIf="display" class="p-2 mt-3 ms-5 text-info">
+  Secret Password: 244466666
+</span>
+
+<p
+  *ngFor="let item of countLogs"
+  [ngStyle]="{ backgroundColor: item > 4 ? 'green' : '' }"
+  [ngClass]="{ 'white-color': item > 4 }"
 >
-  Reset
-</button>
+  log:click count {{ item }}
+</p>
